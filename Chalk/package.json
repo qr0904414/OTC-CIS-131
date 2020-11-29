@@ -1,0 +1,15 @@
+{
+  "name": "myfirstchalk",
+  "version": "1.0.0",
+  "description": "My first Chalk assignment",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Quinn Ridings",
+  "license": "ISC"
+}

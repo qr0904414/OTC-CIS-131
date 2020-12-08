@@ -13,7 +13,7 @@ npm run serve
 ## Quinn Ridings
 
 ### Netlify link
-## 
+## https://qr0904414-current-weather.netlify.app/
 
 
 ### Compiles and minifies for production

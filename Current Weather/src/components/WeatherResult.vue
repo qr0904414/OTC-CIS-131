@@ -1,3 +1,10 @@
+<!--
+    Created by: Quinn Ridings
+    Last modified date: 12/13/2020
+
+    Assignment for: OTC-CIS-131
+-->
+
 <!-- Creating the template -->
 <template>
     <div class='root'>
@@ -43,6 +50,10 @@
 
 <!-- CSS Styles scoped to this file only -->
     <style scoped>
+        .root
+        {
+            padding-top: 0px;
+        }
         * {
             background-color: rgb(122, 189, 211);
             color: black;

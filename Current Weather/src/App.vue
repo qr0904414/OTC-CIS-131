@@ -1,3 +1,10 @@
+<!--
+    Created by: Quinn Ridings
+    Last modified date: 12/13/2020
+
+    Assignment for: OTC-CIS-131
+-->
+
 <!-- Main data for the page that doesn't change -->
   <template>
     <div id="app">
@@ -18,7 +25,9 @@
     }
   </script>
 
-<!-- Style that is not localized to this component -->
+<!-- Style that is not localized to this component
+     So this style affects everything, unless overriden later
+-->
   <style>
     * {
       background-color: rgb(158, 158, 158);

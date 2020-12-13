@@ -1,3 +1,10 @@
+<!--
+    Created by: Quinn Ridings
+    Last modified date: 12/13/2020
+
+    Assignment for: OTC-CIS-131
+-->
+
 <!-- Template that holds the input from the user, and also holds the WeatherResult data -->
     <template>
         <div>
@@ -10,64 +17,64 @@
                 <input type="button" v-on:click="validateAndSend" value="View the weather">
                 <h3 id='invalid-input' class="invalid-input-hidden"> INPUT MUST BE A 5 DIGIT NUMBER </h3>
             <!-- Vue component that shows the result -->    
-                <WeatherResult :status="this.status" :result="this.weatherResult" :unit="this.selectedUnit"/>
+                <WeatherResult :status="this.status" :result="this.weatherResult" :unit="this.selectedUnit" />
         </div>
     </template>
 
 <!-- Script that holds all of the data for the website. 
     This is wher Axios gets called, and where data is stored to be referenced elsewhere. -->
         <script>
-            //Import the WeatherResult VUE component and the Axios module
+            // Import the WeatherResult VUE component and the Axios module
                 import WeatherResult from './WeatherResult.vue';
                 import axios from 'axios'
 
-            //Export this and the WeatherResult component as "WeatherForm"
+            // Export this and the WeatherResult component as the name "WeatherForm"
                 export default {
                     name: "WeatherForm",
                     components:
                     {
-                        //The WeatherResult element/component
+                        // The WeatherResult element/component
                             WeatherResult
                     },
-            //Where the data is stored        
+            // Where the data is stored        
                 data()
                 {
                     return {
-                        //The weatherResult array
-                            //Setting the temp to an empty string to prevent errors being
-                            //thrown when the page loads (as this doesn't exist yet until Axios says so)
-                            weatherResult: 
-                            {
-                                main:
-                                    {
-                                            temp: -100000.0
-                                    }
-                            },
-                        //Var for the unit selected by the user
-                        selectedUnit: '',
-                        status: ''
+                        // The weatherResult array
+                        // Setting the temp to a negative number to prevent errors being
+                        // thrown when the page loads (as this doesn't exist yet until Axios says so)
+                                weatherResult: 
+                                {
+                                    main:
+                                        {
+                                                temp: -100000.0
+                                        }
+                                },
+                        // Var for the unit selected by the user
+                            selectedUnit: '',
+                            status: ''
                     }
                 },
-            //Methods used to validate user input and trigger Axios
+            // Methods used to validate user input and trigger Axios
                 methods:
                 {
                     // Validating the ZIP code is in a correct format before actually
                         // having Axios do it's thing.
                         validateAndSend()
                         {
-                            //Get the zipCode and the invalidInput from the page
+                            // Get the zipCode and the invalidInput from the page
                                 var zipCode = document.getElementById("zipCode");
                                 var invalidInput = document.getElementById('invalid-input');
 
-                            //Using RegEx to see if the zipCode matches requirements
-                            if ((zipCode.value).match('[0-9][0-9][0-9][0-9][0-9]')) {
-                                invalidInput.className = 'invalid-input-hidden';
-                                this.getWeather();
-                            }
-                            else invalidInput.className = 'invalid-input-shown';
+                            // Using RegEx to see if the zipCode matches requirements
+                                if ((zipCode.value).match('[0-9][0-9][0-9][0-9][0-9]')) {
+                                    invalidInput.className = 'invalid-input-hidden';
+                                    this.getWeather();
+                                }
+                                else invalidInput.className = 'invalid-input-shown';
                         },
                     // Get the weather with an Axios call. This function is only called
-                        //If validateAndSend() passed and called this.
+                    // If validateAndSend() passed and called this.
                         getWeather()
                         {
                             // Get and set data from the site
@@ -116,6 +123,10 @@
 
 // Style scoped to only this file
     <style scoped>
+        h3
+        {
+            padding-bottom: 0;
+        }
         input:nth-of-type(1) {
             background-color: white;
             color: black;
@@ -131,7 +142,7 @@
         select, option {
             color: black;
             border-radius: 10px;
-            outline-width: 0;
+            outline-width: none;
             padding-top: 15px;
             padding-bottom: 15px;
             font-size: 18px;
@@ -145,7 +156,7 @@
             color: black;
             border-radius: 10px;
             width: 20%;
-            outline-width: 0;
+            outline-width: none;
             padding-top: 15px;
             padding-bottom: 15px;
             font-size: 20px;
@@ -173,7 +184,6 @@
             opacity: 0;
             margin-top: -10px;
         }
-
         .invalid-input-shown
         {
             color: rgb(253, 168, 168);

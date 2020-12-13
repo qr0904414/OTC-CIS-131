@@ -1,5 +1,12 @@
 # current_weather
 
+## Created by
+### Quinn Ridings
+
+## Netlify link
+### https://qr0904414-current-weather.netlify.app/
+
+
 ## Project setup
 ```
 npm install
@@ -9,12 +16,6 @@ npm install
 ```
 npm run serve
 ```
-### Created by
-## Quinn Ridings
-
-### Netlify link
-## https://qr0904414-current-weather.netlify.app/
-
 
 ### Compiles and minifies for production
 ```
